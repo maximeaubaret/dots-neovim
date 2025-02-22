@@ -108,8 +108,8 @@ return {
         end,
       },
       mapping = cmp.mapping.preset.insert({
-        ['<S-k>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<S-j>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
         ['<Enter>'] = cmp.mapping.confirm({ select = true }),
         ["<C-Space>"] = cmp.mapping.complete(),
       }),
