@@ -25,8 +25,10 @@ vim.keymap.set("n", "<C-p>", ":r ~/.vimbuffer<CR>", { desc = "Global paste" })
 
 
 -- Code
-vim.keymap.set("n", "<leader>cr", vim.cmd.LspRestart, { desc = "Restart LSP" })
+-- vim.keymap.set("n", "<leader>cr", vim.cmd.LspRestart, { desc = "Restart LSP" })
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
 
 vim.keymap.set("n", "<C-k>", function() require("trouble").previous("diagnostics") end,
   { desc = "Move to previous issue" })

@@ -17,5 +17,6 @@ return {
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help tags' })
     vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'Commands' })
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Keymaps' })
+    vim.keymap.set('n', '<leader>fu', builtin.colorscheme, { desc = 'Keymaps' })
   end
 }
