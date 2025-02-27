@@ -30,8 +30,7 @@ vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
 
-vim.keymap.set("n", "<C-k>", function() require("trouble").previous("diagnostics") end,
-  { desc = "Move to previous issue" })
+vim.keymap.set("n", "<C-k>", function() require("trouble").previous("diagnostics") end, { desc = "Move to previous issue" })
 vim.keymap.set("n", "<C-j>", function() require("trouble").next("diagnostics") end, { desc = "Move to next issue" })
 -- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
@@ -40,3 +39,5 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
 -- Open diagnostic window
 vim.keymap.set("n", "<C-k>", vim.diagnostic.open_float, { desc = "Open diagnostics window" })
+
+vim.keymap.set("n", "<leader>fn", function () require("noice").cmd("history")  end, { desc = "Notifications history" })

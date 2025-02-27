@@ -5,7 +5,7 @@ return {
   opts = {
     animate = { enabled = false },
     bigfile = { enabled = true },
-    dashboard = { enabled = false },
+    dashboard = { enabled = true },
     explorer = { enabled = false },
     indent = { enabled = true },
     input = { enabled = true },

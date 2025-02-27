@@ -8,7 +8,17 @@ return {
   },
 
   config = function()
-    require('telescope').setup({})
+    require('telescope').setup({
+      defaults = {
+        mappings = {
+          i = {
+            ["<esc>"] = require("telescope.actions").close,
+            ["<C-k>"] = require("telescope.actions").move_selection_previous,
+            ["<C-j>"] = require("telescope.actions").move_selection_next,
+          }
+        }
+      }
+    })
 
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = 'Find files' })
@@ -18,5 +28,9 @@ return {
     vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'Commands' })
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Keymaps' })
     vim.keymap.set('n', '<leader>fu', builtin.colorscheme, { desc = 'Keymaps' })
+    vim.keymap.set('n', '<leader>f?', builtin.man_pages, { desc = 'Man Pages' })
+
+    vim.keymap.set('n', '<leader>cfs', builtin.lsp_dynamic_workspace_symbols, { desc = 'Symbols' })
+    vim.keymap.set('n', '<leader>cfr', builtin.lsp_references, { desc = 'References' })
   end
 }
