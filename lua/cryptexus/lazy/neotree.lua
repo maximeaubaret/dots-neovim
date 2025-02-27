@@ -15,6 +15,6 @@ return {
       }
     }
 
-    vim.keymap.set("n", "<leader>e", vim.cmd.Neotree, { desc = "Open Tree" })
+    vim.keymap.set("n", "<leader>e", function() vim.cmd.Neotree("toggle") end, { desc = "Open Tree" })
   end
 }
