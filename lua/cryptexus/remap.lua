@@ -1,10 +1,10 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open project view" })
 
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open project view" })
 -- Move lines in normal mode
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
 
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
 -- Move lines in visual mode
 vim.keymap.set("v", "<A-K>", ":m '<-2<CR>gv=gv", { desc = "Move lines up" })
 vim.keymap.set("v", "<A-J>", ":m '>+1<CR>gv=gv", { desc = "Move lines down" })
@@ -30,8 +30,10 @@ vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP Rename" })
 vim.keymap.set("n", "<leader>c=", vim.lsp.buf.format, { desc = "LSP Format" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Actions" })
 
-vim.keymap.set("n", "<C-k>", function() require("trouble").previous("diagnostics") end, { desc = "Move to previous issue" })
-vim.keymap.set("n", "<C-j>", function() require("trouble").next("diagnostics") end, { desc = "Move to next issue" })
+vim.keymap.set("n", "<C-k>", function() require("trouble").previous({ mode = "diagnostics", jump = true, skip_groups = true }) end,
+  { desc = "Move to previous issue" })
+vim.keymap.set("n", "<C-j>", function() require("trouble").next({ mode = "diagnostics", jump = true, skip_groups = true }) end,
+  { desc = "Move to next issue" })
 -- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 --
@@ -40,4 +42,4 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 -- Open diagnostic window
 vim.keymap.set("n", "<C-k>", vim.diagnostic.open_float, { desc = "Open diagnostics window" })
 
-vim.keymap.set("n", "<leader>fn", function () require("noice").cmd("history")  end, { desc = "Notifications history" })
+vim.keymap.set("n", "<leader>fn", function() require("noice").cmd("history") end, { desc = "Notifications history" })

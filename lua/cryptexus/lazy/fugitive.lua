@@ -5,5 +5,6 @@ return {
     { "<leader>gl", function() vim.cmd.Git("log") end,    desc = "Git log" },
     { "<leader>gd", function() vim.cmd.Git("diff") end,   desc = "Git diff" },
     { "<leader>gc", function() vim.cmd.Git("commit") end, desc = "Git commit" },
+    { "<leader>gp", function() vim.cmd.Git("push") end, desc = "Git push" },
   }
 }
