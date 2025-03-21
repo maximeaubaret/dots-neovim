@@ -36,11 +36,15 @@ return {
       cmp_lsp.default_capabilities())
 
     require("fidget").setup({})
+
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
         "rust_analyzer",
+        "eslint",
+        "nil_ls",
+        "vtsls"
       },
 
       handlers = {
