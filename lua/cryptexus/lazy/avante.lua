@@ -2,12 +2,24 @@ return {
   "yetone/avante.nvim",
   event = "VeryLazy",
   lazy = false,
-  version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
+  -- version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
   opts = {
-    claude = {
-      model = "claude-3-5-sonnet-20241022"
+    -- claude = {
+    --   model = "claude-3-5-sonnet-20241022"
+    -- },
+    -- disabled_tools = { "python" }
+    --
+    debug = true,
+    provider = "ollama",
+    ollama = {
+      endpoint = "http://127.0.0.1:11434",
+      model = "qwen2.5-coder:latest",
+      options = {
+        num_ctx = 32768,
+        temperature = 0,
+      },
+      stream = true,
     },
-    disabled_tools = { "python" }
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
@@ -38,6 +50,7 @@ return {
           -- required for Windows users
           use_absolute_path = true,
         },
+
       },
     },
     {
