@@ -42,7 +42,9 @@ end, { desc = "Move to next issue" })
 -- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 --
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set("n", "gd", function()
+	require("telescope.builtin").lsp_definitions()
+end, { desc = "Go to definition" })
 
 -- Open diagnostic window
 vim.keymap.set("n", "<C-k>", vim.diagnostic.open_float, { desc = "Open diagnostics window" })
