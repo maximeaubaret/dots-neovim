@@ -34,11 +34,15 @@ vim.keymap.set("n", "<leader>c=", vim.lsp.buf.format, { desc = "LSP Format" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Actions" })
 
 vim.keymap.set("n", "<C-k>", function()
-	require("trouble").previous({ mode = "diagnostics", jump = true, skip_groups = true })
+	vim.diagnostic.goto_prev()
+	-- require("trouble").previous({ mode = "diagnostics", jump = true, skip_groups = true })
 end, { desc = "Move to previous issue" })
+
 vim.keymap.set("n", "<C-j>", function()
-	require("trouble").next({ mode = "diagnostics", jump = true, skip_groups = true })
+	-- require("trouble").next({ mode = "diagnostics", jump = true, skip_groups = true })
+	vim.diagnostic.goto_next()
 end, { desc = "Move to next issue" })
+
 -- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 --
