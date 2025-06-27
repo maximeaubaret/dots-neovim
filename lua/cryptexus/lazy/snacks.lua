@@ -9,7 +9,7 @@ return {
 			enabled = true,
 			sections = {
 				-- { section = "header" },
-				{ section = "terminal", cmd = "fortune -s | cowsay | lolcat", hl = "header", indent = 8, padding = 1 },
+				-- { section = "terminal", cmd = "fortune -s | cowsay | lolcat", hl = "header", indent = 8, padding = 1 },
 				{ title = "Keys", section = "keys", indent = 2, padding = 1 },
 				{ title = "Recent", section = "recent_files", indent = 2, padding = 1 },
 				{ section = "startup" },
