@@ -5,6 +5,7 @@ return {
 
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"https://git.myzel394.app/Myzel394/jsonfly.nvim",
 	},
 
 	config = function()

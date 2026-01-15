@@ -13,6 +13,7 @@ return {
 				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
 				nix = { "alejandra", stop_after_first = true },
 				csharp = { "csharpier", stop_after_first = true },
+				python = { "black", stop_after_first = true },
 			},
 
 			format_on_save = {
